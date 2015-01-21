@@ -1,16 +1,4 @@
-require('rspec')
-require('stop')
-require('train')
-require('pry')
-require('pg')
-
-DB = PG.connect({:dbname=>'train_test'})
-
-    RSpec.configure do |config|
-      config.after(:each) do
-      DB.exec("DELETE FROM train *;")
-    end
-  end
+require('spec_buddy')
 
 describe(Train) do
 
@@ -41,12 +29,13 @@ describe(Train) do
     end
   end
 
-  describe('#save')
+  describe('#save') do
     it('saves each new train to the table') do
       test_train=Train.new(:name => "Red", :direction => "North", :express => "t", :id => nil)
       test_train.save()
       expect(Train.all()).to(eq([test_train]))
     end
+  end
 
   describe('#==') do
     it("is the same train if it has the same description and train ID") do
