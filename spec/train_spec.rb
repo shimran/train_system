@@ -44,4 +44,15 @@ describe(Train) do
       expect(train1).to(eq(train2))
     end
   end
+
+
+  # describe('#get_stations') do
+  #   it('returns an array of station ids from a prompt "what stations are on the blue?"') do
+  #     test_train = Train.new({:name =. "Blue", :direction => "North", :express => "f", :id => nil})
+  #     station1 = Station.new({:name = "ShimCity", :id => nil})
+  #     station2 = Station.new({:name = "Maynardville", :id => nil})
+  #     station3 = Station.new({:name = "Jessicaburg", :id => nil})
+  #     expect(test_train.get_stations()).to(eq([station1, station2]))
+  #   end
+  # end
 end

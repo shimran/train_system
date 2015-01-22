@@ -27,5 +27,11 @@ class Stop
   define_method(:==) do |another_stop|
     self.train_id().==(another_stop.train_id()).&(self.station_id().==(another_stop.station_id()))
   end
-
 end
+
+  # define_method(:get_stations) do
+  #   returned_trains = DB.exec("SELECT train_id FROM stops")
+  #   stations = []
+  #   returned_trains.each() do |train|
+  #
+  # end
